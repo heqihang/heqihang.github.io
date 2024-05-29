@@ -1,161 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .h1 {
-            font-size: 36px;
-            color: cornflowerblue;
-            display: inline-block;
-        }
-
-        .h1:hover {
-            animation: animate1 0.5s linear infinite;
-        }
-
-        @keyframes animate1 {
-            0%, 25% {
-                text-shadow: 2px 2px 2px #ff6384;
-            }
-            50% {
-                text-shadow: 2px -2px 2px #ff6384;
-            }
-            75% {
-                text-shadow: -2px 2px 2px #ff6384;
-            }
-            100% {
-                text-shadow: -2px -2px 2px #ff6384;
-            }
-        }
-
-        .box {
-            display: inline-block;
-            position: relative;
-        }
-
-        .h2 {
-            font-size: 36px;
-            color: cornflowerblue;
-        }
-
-        .h2::before {
-            content: '';
-            height: 4px;
-            background-color: cornflowerblue;
-            display: inline-block;
-            position: absolute;
-            bottom: 0;
-            width: 0;
-            transition: width 0.5s;
-        }
-
-        .h2:hover::before {
-            width: 100%;
-        }
-
-        .h3 {
-            font-size: 36px;
-            background: linear-gradient(135deg, #0eaf6d 0%, #ff6ac6 25%, #147b96 50%, #e6d205 55%, #2cc4e0 60%, #8b2ce0 80%, #ff6384 95%, #08dfb4 100%);
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            background-size: 200% 100%;
-            animation: animate2 12s linear infinite;
-        }
-
-        @keyframes animate2 {
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: -400% 0;
-            }
-        }
-
-        .h4 {
-            font-size: 36px;
-            color: cornflowerblue;
-            width: 13em;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 1px solid #000;
-            animation: animate3 6s steps(13) infinite, animate4 0.5s steps(1) infinite;
-        }
-
-        @keyframes animate3 {
-            0% {
-                width: 0;
-            }
-        }
-
-        @keyframes animate4 {
-            50% {
-                border-color: transparent;
-            }
-        }
-
-        .h5 {
-            color: cornflowerblue;
-            font-size: 36px;
-            display: inline-block;
-            transform: rotate(30deg);
-            animation: animate5 .5s ease infinite;
-        }
-
-        @keyframes animate5 {
-            0% {
-                transform: rotate(0);
-            }
-            20% {
-                transform: rotate(-2deg);
-            }
-            60% {
-                transform: rotate(0);
-            }
-            80% {
-                transform: rotate(2deg);
-            }
-            100% {
-                transform: rotate(0);
-            }
-        }
-
-        .circle-breath {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: pink;
-            box-shadow: 0 0 0 0 rgb(204, 73, 152);
-            animation: animate6 2.4s infinite;
-        }
-
-        @keyframes animate6 {
-            0% {
-                transform: scale(0.6);
-                box-shadow: 0 0 0 0 rgba(204, 73, 152, 60%);
-            }
-            60% {
-                transform: scale(1);
-                box-shadow: 0 0 0 36px rgba(204, 73, 152, 0%);
-            }
-            100% {
-                transform: scale(0.6);
-                box-shadow: 0 0 0 0 rgba(204, 73, 152, 0%);
-            }
-        }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-<div class="h1">Hello</div>
-<div class="box">
-    <div class="h2">Hello</div>
-</div>
-<div class="h3">文字颜色渐变流光效果</div>
-<div class="h4">真的想，寂寞的时候有个伴</div>
-<div>
-    <span class="h5">你好</span><span class="h5">我是</span><span class="h5">何总</span>
-</div>
-<div class="circle-breath"></div>
-</body>
-</html>
+<div id="toECI"></div>
+<div id="text"></div>
+<div id="trip"></div>
+<div id="dragon"></div>
+<div id="s06"></div>
+<div id="s07"></div>
+<div id="s08"></div>
+<div id="s09"></div>
+<div id="autumn"></div>
+<div id="national"></div>
+<div id="s10"></div>
+<div id="s11"></div>
+<div id="s12"></div>
+<div id="newYear"></div>
+<div id="fes"></div>
 
+<script>
+  const beginDate = new Date('2021-11-03').getTime()
+  const currentTimeMS = new Date().getTime()
+  const distance = currentTimeMS - beginDate
+  document.getElementById('toECI').innerText = `加入ECI已经${Math.floor(distance / 1000 / 60 / 60 / 24)}天`
+  // 放学倒计时
+  let timer = null
+
+  function time() {
+    const targetDate = new Date(`${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()} 17:52:00`)
+    const oDate = new Date()
+    const distance = (targetDate.getTime() - oDate.getTime()) / 1000
+    const hours = Math.floor(distance / 60 / 60 % 24)
+    const minutes = Math.floor(distance / 60 % 60)
+    const seconds = Math.floor(distance % 60)
+    if (hours <= 0 && minutes <= 0 && seconds <= 0) {
+      timer && clearInterval(timer)
+      document.getElementById('text').innerText = '已放学，请不要再卷了！'
+    } else {
+      timer && clearInterval(timer)
+      timer = setInterval(() => {
+        time()
+      }, 1000)
+      document.getElementById('text').innerText = `现在距离放学还有${hours}小时${minutes}分${seconds}秒(${Math.floor(distance)}秒)(17:52:00)`
+    }
+  }
+
+  time()
+
+  // 日期倒计时
+  const currentTime = new Date()
+  const currentYear = currentTime.getFullYear()
+  const currentMonth = currentTime.getMonth() + 1
+  const currentDay = currentTime.getDate()
+  const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
+  const endTripDate = new Date('2024-06-07')
+  const endDragonDate = new Date('2024-06-08')
+  const endS06Date = new Date('2024-06-11')
+  const endS07Date = new Date('2024-07-10')
+  const endS08Date = new Date('2024-08-09')
+  const endS09Date = new Date('2024-09-10')
+  const endAutumnDate = new Date('2024-09-15')
+  const endNationalDate = new Date('2024-10-01')
+  const endS10Date = new Date('2024-10-10')
+  const endS11Date = new Date('2024-11-08')
+  const endS12Date = new Date('2024-12-10')
+  const endNewYearDate = new Date('2025-01-01')
+  const endFesDate = new Date('2025-01-28')
+  const distanceDragon = endDragonDate.getTime() - currentDate.getTime()
+  const distanceS06 = endS06Date.getTime() - currentDate.getTime()
+  const distanceTrip = endTripDate.getTime() - currentDate.getTime()
+  const distanceS07 = endS07Date.getTime() - currentDate.getTime()
+  const distanceS08 = endS08Date.getTime() - currentDate.getTime()
+  const distanceS09 = endS09Date.getTime() - currentDate.getTime()
+  const distanceAutumn = endAutumnDate.getTime() - currentDate.getTime()
+  const distanceNational = endNationalDate.getTime() - currentDate.getTime()
+  const distanceS10 = endS10Date.getTime() - currentDate.getTime()
+  const distanceS11 = endS11Date.getTime() - currentDate.getTime()
+  const distanceS12 = endS12Date.getTime() - currentDate.getTime()
+  const distanceNewYear = endNewYearDate.getTime() - currentDate.getTime()
+  const distanceFes = endFesDate.getTime() - currentDate.getTime()
+  document.getElementById('trip').innerText = `今天距离出去玩还有${Math.floor(distanceTrip / 1000 / 24 / 60 / 60)}天(2024.06.07)`
+  document.getElementById('dragon').innerText = `今天距离端午节假期还有${Math.floor(distanceDragon / 1000 / 24 / 60 / 60)}天(2024.06.08)`
+  document.getElementById('s06').innerText = `今天距离六月份开资还有${Math.floor(distanceS06 / 1000 / 24 / 60 / 60)}天(2024.06.11)`
+  document.getElementById('s07').innerText = `今天距离七月份开资还有${Math.floor(distanceS07 / 1000 / 24 / 60 / 60)}天(2024.07.10)`
+  document.getElementById('s08').innerText = `今天距离八月份开资还有${Math.floor(distanceS08 / 1000 / 24 / 60 / 60)}天(2024.08.09)`
+  document.getElementById('s09').innerText = `今天距离九月份开资还有${Math.floor(distanceS09 / 1000 / 24 / 60 / 60)}天(2024.09.10)`
+  document.getElementById('autumn').innerText = `今天距离中秋节假期还有${Math.floor(distanceAutumn / 1000 / 24 / 60 / 60)}天(2024.09.15)`
+  document.getElementById('national').innerText = `今天距离国庆节假期还有${Math.floor(distanceNational / 1000 / 24 / 60 / 60)}天(2024.10.01)`
+  document.getElementById('s10').innerText = `今天距离十月份开资还有${Math.floor(distanceS10 / 1000 / 24 / 60 / 60)}天(2024.10.10)`
+  document.getElementById('s11').innerText = `今天距离十一月份开资还有${Math.floor(distanceS11 / 1000 / 24 / 60 / 60)}天(2024.11.08)`
+  document.getElementById('s12').innerText = `今天距离十二月份开资还有${Math.floor(distanceS12 / 1000 / 24 / 60 / 60)}天(2024.12.10)`
+  document.getElementById('newYear').innerText = `今天距离2025年元旦还有${Math.floor(distanceNewYear / 1000 / 24 / 60 / 60)}天(2025.01.01)`
+  document.getElementById('fes').innerText = `今天距离2025年除夕还有${Math.floor(distanceFes / 1000 / 24 / 60 / 60)}天(2025.01.28)`
+</script>
