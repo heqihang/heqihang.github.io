@@ -7,9 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="trip"></div>
-<div id="dragon"></div>
-<div id="s06"></div>
 <div id="s07"></div>
 <div id="s08"></div>
 <div id="s09"></div>
@@ -56,9 +53,6 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endTripDate = new Date('2024-06-07')
-  const endDragonDate = new Date('2024-06-08')
-  const endS06Date = new Date('2024-06-11')
   const endS07Date = new Date('2024-07-10')
   const endS08Date = new Date('2024-08-09')
   const endS09Date = new Date('2024-09-10')
@@ -69,9 +63,6 @@
   const endS12Date = new Date('2024-12-10')
   const endNewYearDate = new Date('2025-01-01')
   const endFesDate = new Date('2025-01-28')
-  const distanceDragon = endDragonDate.getTime() - currentDate.getTime()
-  const distanceS06 = endS06Date.getTime() - currentDate.getTime()
-  const distanceTrip = endTripDate.getTime() - currentDate.getTime()
   const distanceS07 = endS07Date.getTime() - currentDate.getTime()
   const distanceS08 = endS08Date.getTime() - currentDate.getTime()
   const distanceS09 = endS09Date.getTime() - currentDate.getTime()
@@ -82,9 +73,6 @@
   const distanceS12 = endS12Date.getTime() - currentDate.getTime()
   const distanceNewYear = endNewYearDate.getTime() - currentDate.getTime()
   const distanceFes = endFesDate.getTime() - currentDate.getTime()
-  document.getElementById('trip').innerText = `今天距离出去玩还有${Math.floor(distanceTrip / 1000 / 24 / 60 / 60)}天(2024.06.07)`
-  document.getElementById('dragon').innerText = `今天距离端午节假期还有${Math.floor(distanceDragon / 1000 / 24 / 60 / 60)}天(2024.06.08)`
-  document.getElementById('s06').innerText = `今天距离六月份开资还有${Math.floor(distanceS06 / 1000 / 24 / 60 / 60)}天(2024.06.11)`
   document.getElementById('s07').innerText = `今天距离七月份开资还有${Math.floor(distanceS07 / 1000 / 24 / 60 / 60)}天(2024.07.10)`
   document.getElementById('s08').innerText = `今天距离八月份开资还有${Math.floor(distanceS08 / 1000 / 24 / 60 / 60)}天(2024.08.09)`
   document.getElementById('s09').innerText = `今天距离九月份开资还有${Math.floor(distanceS09 / 1000 / 24 / 60 / 60)}天(2024.09.10)`
