@@ -7,7 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="s09"></div>
 <div id="autumn"></div>
 <div id="national"></div>
 <div id="s10"></div>
@@ -51,7 +50,6 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endS09Date = new Date('2024-09-10')
   const endAutumnDate = new Date('2024-09-15')
   const endNationalDate = new Date('2024-10-01')
   const endS10Date = new Date('2024-10-10')
@@ -59,7 +57,6 @@
   const endS12Date = new Date('2024-12-10')
   const endNewYearDate = new Date('2025-01-01')
   const endFesDate = new Date('2025-01-28')
-  const distanceS09 = endS09Date.getTime() - currentDate.getTime()
   const distanceAutumn = endAutumnDate.getTime() - currentDate.getTime()
   const distanceNational = endNationalDate.getTime() - currentDate.getTime()
   const distanceS10 = endS10Date.getTime() - currentDate.getTime()
@@ -67,7 +64,6 @@
   const distanceS12 = endS12Date.getTime() - currentDate.getTime()
   const distanceNewYear = endNewYearDate.getTime() - currentDate.getTime()
   const distanceFes = endFesDate.getTime() - currentDate.getTime()
-  document.getElementById('s09').innerText = `今天距离九月份开资还有${Math.floor(distanceS09 / 1000 / 24 / 60 / 60)}天(2024.09.10)`
   document.getElementById('autumn').innerText = `今天距离中秋节假期还有${Math.floor(distanceAutumn / 1000 / 24 / 60 / 60)}天(2024.09.15)`
   document.getElementById('national').innerText = `今天距离国庆节假期还有${Math.floor(distanceNational / 1000 / 24 / 60 / 60)}天(2024.10.01)`
   document.getElementById('s10').innerText = `今天距离十月份开资还有${Math.floor(distanceS10 / 1000 / 24 / 60 / 60)}天(2024.10.10)`
