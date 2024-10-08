@@ -7,7 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="national"></div>
 <div id="s10"></div>
 <div id="s11"></div>
 <div id="s12"></div>
@@ -49,19 +48,16 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endNationalDate = new Date('2024-10-01')
   const endS10Date = new Date('2024-10-10')
   const endS11Date = new Date('2024-11-08')
   const endS12Date = new Date('2024-12-10')
   const endNewYearDate = new Date('2025-01-01')
   const endFesDate = new Date('2025-01-28')
-  const distanceNational = endNationalDate.getTime() - currentDate.getTime()
   const distanceS10 = endS10Date.getTime() - currentDate.getTime()
   const distanceS11 = endS11Date.getTime() - currentDate.getTime()
   const distanceS12 = endS12Date.getTime() - currentDate.getTime()
   const distanceNewYear = endNewYearDate.getTime() - currentDate.getTime()
   const distanceFes = endFesDate.getTime() - currentDate.getTime()
-  document.getElementById('national').innerText = `今天距离国庆节假期还有${Math.floor(distanceNational / 1000 / 24 / 60 / 60)}天(2024.10.01)`
   document.getElementById('s10').innerText = `今天距离十月份开资还有${Math.floor(distanceS10 / 1000 / 24 / 60 / 60)}天(2024.10.10)`
   document.getElementById('s11').innerText = `今天距离十一月份开资还有${Math.floor(distanceS11 / 1000 / 24 / 60 / 60)}天(2024.11.08)`
   document.getElementById('s12').innerText = `今天距离十二月份开资还有${Math.floor(distanceS12 / 1000 / 24 / 60 / 60)}天(2024.12.10)`
