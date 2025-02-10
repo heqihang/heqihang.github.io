@@ -7,7 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="s02"></div>
 <div id="s03"></div>
 <div id="s-h"></div>
 <div id="q-m"></div>
@@ -53,7 +52,6 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endS02Date = new Date('2025-02-10')
   const endS03Date = new Date('2025-03-10')
   const endSHDate = new Date('2025-03-13')
   const endQMDate = new Date('2025-04-04')
@@ -63,7 +61,6 @@
   const endLaborDate = new Date('2025-05-01')
   const endDragonDate = new Date('2025-05-31')
   const endS06Date = new Date('2025-06-10')
-  const distanceS02 = endS02Date.getTime() - currentDate.getTime()
   const distanceS03 = endS03Date.getTime() - currentDate.getTime()
   const distanceSH = endSHDate.getTime() - currentDate.getTime()
   const distanceQM = endQMDate.getTime() - currentDate.getTime()
@@ -73,7 +70,6 @@
   const distanceLabor = endLaborDate.getTime() - currentDate.getTime()
   const distanceS06 = endS06Date.getTime() - currentDate.getTime()
   const distanceDragon = endDragonDate.getTime() - currentDate.getTime()
-  document.getElementById('s02').innerText = `今天距离2月份开资还有${Math.floor(distanceS02 / 1000 / 24 / 60 / 60)}天(2025.02.10)`
   document.getElementById('s03').innerText = `今天距离3月份开资还有${Math.floor(distanceS03 / 1000 / 24 / 60 / 60)}天(2025.03.10)`
   document.getElementById('q-m').innerText = `今天距离清明节还有${Math.floor(distanceQM / 1000 / 24 / 60 / 60)}天(2025.04.04)`
   document.getElementById('s-h').innerText = `今天距离去上海、杭州还有${Math.floor(distanceSH / 1000 / 24 / 60 / 60)}天(2025.03.13)`
