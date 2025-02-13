@@ -52,8 +52,8 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
+  const endSHDate = new Date('2025-03-07')
   const endS03Date = new Date('2025-03-10')
-  const endSHDate = new Date('2025-03-21')
   const endQMDate = new Date('2025-04-04')
   const endS04Date = new Date('2025-04-10')
   const endBirthDate = new Date('2025-04-12')
@@ -61,8 +61,8 @@
   const endLaborDate = new Date('2025-05-01')
   const endDragonDate = new Date('2025-05-31')
   const endS06Date = new Date('2025-06-10')
-  const distanceS03 = endS03Date.getTime() - currentDate.getTime()
   const distanceSH = endSHDate.getTime() - currentDate.getTime()
+  const distanceS03 = endS03Date.getTime() - currentDate.getTime()
   const distanceQM = endQMDate.getTime() - currentDate.getTime()
   const distanceS04 = endS04Date.getTime() - currentDate.getTime()
   const distanceBirth = endBirthDate.getTime() - currentDate.getTime()
@@ -70,9 +70,9 @@
   const distanceLabor = endLaborDate.getTime() - currentDate.getTime()
   const distanceS06 = endS06Date.getTime() - currentDate.getTime()
   const distanceDragon = endDragonDate.getTime() - currentDate.getTime()
+  document.getElementById('s').innerText = `今天距离去上海还有${Math.floor(distanceSH / 1000 / 24 / 60 / 60)}天(2025.03.07)`
   document.getElementById('s03').innerText = `今天距离3月份开资还有${Math.floor(distanceS03 / 1000 / 24 / 60 / 60)}天(2025.03.10)`
   document.getElementById('q-m').innerText = `今天距离清明节还有${Math.floor(distanceQM / 1000 / 24 / 60 / 60)}天(2025.04.04)`
-  document.getElementById('s').innerText = `今天距离去上海还有${Math.floor(distanceSH / 1000 / 24 / 60 / 60)}天(2025.03.21)`
   document.getElementById('s04').innerText = `今天距离4月份开资还有${Math.floor(distanceS04 / 1000 / 24 / 60 / 60)}天(2025.04.10)`
   document.getElementById('birth').innerText = `今天距离过生日还有${Math.floor(distanceBirth / 1000 / 24 / 60 / 60)}天(2025.04.12)`
   document.getElementById('labor').innerText = `今天距离五一劳动节还有${Math.floor(distanceLabor / 1000 / 24 / 60 / 60)}天(2025.05.01)`
