@@ -7,8 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="labor"></div>
-<div id="s05"></div>
 <div id="dragon"></div>
 <div id="s06"></div>
 
@@ -47,16 +45,12 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endS05Date = new Date('2025-05-09')
-  const endLaborDate = new Date('2025-05-01')
   const endDragonDate = new Date('2025-05-31')
   const endS06Date = new Date('2025-06-10')
   const distanceS05 = endS05Date.getTime() - currentDate.getTime()
   const distanceLabor = endLaborDate.getTime() - currentDate.getTime()
   const distanceS06 = endS06Date.getTime() - currentDate.getTime()
   const distanceDragon = endDragonDate.getTime() - currentDate.getTime()
-  document.getElementById('labor').innerText = `今天距离五一劳动节还有${Math.floor(distanceLabor / 1000 / 24 / 60 / 60)}天(2025.05.01)`
-  document.getElementById('s05').innerText = `今天距离5月份开资还有${Math.floor(distanceS05 / 1000 / 24 / 60 / 60)}天(2025.05.09)`
   document.getElementById('dragon').innerText = `今天距离端午节还有${Math.floor(distanceDragon / 1000 / 24 / 60 / 60)}天(2025.05.31)`
   document.getElementById('s06').innerText = `今天距离6月份开资还有${Math.floor(distanceS06 / 1000 / 24 / 60 / 60)}天(2025.06.10)`
 </script>
