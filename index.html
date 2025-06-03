@@ -46,6 +46,5 @@
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
   const endS06Date = new Date('2025-06-10')
   const distanceS06 = endS06Date.getTime() - currentDate.getTime()
-  const distanceDragon = endDragonDate.getTime() - currentDate.getTime()
   document.getElementById('s06').innerText = `今天距离6月份开资还有${Math.floor(distanceS06 / 1000 / 24 / 60 / 60)}天(2025.06.10)`
 </script>
