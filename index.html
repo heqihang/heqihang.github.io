@@ -7,7 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="s06"></div>
 
 <script>
   const beginDate = new Date('2021-11-03').getTime()
@@ -44,7 +43,7 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endS06Date = new Date('2025-06-10')
-  const distanceS06 = endS06Date.getTime() - currentDate.getTime()
-  document.getElementById('s06').innerText = `今天距离6月份开资还有${Math.floor(distanceS06 / 1000 / 24 / 60 / 60)}天(2025.06.10)`
+  // const endS06Date = new Date('2025-06-10')
+  // const distanceS06 = endS06Date.getTime() - currentDate.getTime()
+  // document.getElementById('s06').innerText = `今天距离6月份开资还有${Math.floor(distanceS06 / 1000 / 24 / 60 / 60)}天(2025.06.10)`
 </script>
