@@ -19,7 +19,7 @@
 <div id="s03"></div>
 <div id="s04"></div>
 <div id="birth"></div>
-<div id="wedding"></div>
+<div id="wedding" style="font-size: 20px; color: red; font-weight: bold;"></div>
 
 <script>
   const beginDate = new Date('2021-11-03').getTime()
@@ -68,8 +68,7 @@
   const endS03Date = new Date('2026-03-10')
   const endS04Date = new Date('2026-04-10')
   const endBirthDate = new Date('2026-04-12')
-  const endWedding1Date = new Date('2026-10-03')
-  const endWedding2Date = new Date('2026-10-06')
+  const endWeddingDate = new Date('2026-10-03')
   const distanceS11 = endS11Date.getTime() - currentDate.getTime()
   const distanceS12 = endS12Date.getTime() - currentDate.getTime()
   const distanceNewYear = endNewYearDate.getTime() - currentDate.getTime()
@@ -82,8 +81,7 @@
   const distanceS03 = endS03Date.getTime() - currentDate.getTime()
   const distanceS04 = endS04Date.getTime() - currentDate.getTime()
   const distanceBirth = endBirthDate.getTime() - currentDate.getTime()
-  const distanceWedding1 = endWedding1Date.getTime() - currentDate.getTime()
-  const distanceWedding2 = endWedding2Date.getTime() - currentDate.getTime()
+  const distanceWedding = endWeddingDate.getTime() - currentDate.getTime()
   document.getElementById('s11').innerText = `今天距离2025年11月份开资还有${Math.floor(distanceS11 / 1000 / 24 / 60 / 60)}天(2025.11.10)`
   document.getElementById('s12').innerText = `今天距离2025年12月份开资还有${Math.floor(distanceS12 / 1000 / 24 / 60 / 60)}天(2025.12.10)`
   document.getElementById('new_year').innerText = `今天距离2026年元旦还有${Math.floor(distanceNewYear / 1000 / 24 / 60 / 60)}天(2026.01.01)`
@@ -96,5 +94,5 @@
   document.getElementById('s03').innerText = `今天距离2026年3月份开资还有${Math.floor(distanceS03 / 1000 / 24 / 60 / 60)}天(2026.03.10)`
   document.getElementById('s04').innerText = `今天距离2026年4月份开资还有${Math.floor(distanceS04 / 1000 / 24 / 60 / 60)}天(2026.04.10)`
   document.getElementById('birth').innerText = `今天距离2026年生日还有${Math.floor(distanceBirth / 1000 / 24 / 60 / 60)}天(2026.04.12)`
-  document.getElementById('wedding').innerText = `今天距离婚礼还有${Math.floor(distanceWedding1 / 1000 / 24 / 60 / 60)}或${Math.floor(distanceWedding2 / 1000 / 24 / 60 / 60)}天(2026.10.03/2026.10.06)`
+  document.getElementById('wedding').innerText = `今天距离婚礼还有${Math.floor(distanceWedding / 1000 / 24 / 60 / 60)}天(2026.10.03`
 </script>
