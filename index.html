@@ -7,7 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="s11"></div>
 <div id="s12"></div>
 <div id="new_year"></div>
 <div id="s01"></div>
@@ -56,7 +55,6 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endS11Date = new Date('2025-11-10')
   const endS12Date = new Date('2025-12-10')
   const endNewYearDate = new Date('2026-01-01')
   const endS01Date = new Date('2026-01-09')
@@ -69,7 +67,6 @@
   const endS04Date = new Date('2026-04-10')
   const endBirthDate = new Date('2026-04-12')
   const endWeddingDate = new Date('2026-10-03')
-  const distanceS11 = endS11Date.getTime() - currentDate.getTime()
   const distanceS12 = endS12Date.getTime() - currentDate.getTime()
   const distanceNewYear = endNewYearDate.getTime() - currentDate.getTime()
   const distanceS01 = endS01Date.getTime() - currentDate.getTime()
@@ -82,7 +79,6 @@
   const distanceS04 = endS04Date.getTime() - currentDate.getTime()
   const distanceBirth = endBirthDate.getTime() - currentDate.getTime()
   const distanceWedding = endWeddingDate.getTime() - currentDate.getTime()
-  document.getElementById('s11').innerText = `今天距离2025年11月份开资还有${Math.floor(distanceS11 / 1000 / 24 / 60 / 60)}天(2025.11.10)`
   document.getElementById('s12').innerText = `今天距离2025年12月份开资还有${Math.floor(distanceS12 / 1000 / 24 / 60 / 60)}天(2025.12.10)`
   document.getElementById('new_year').innerText = `今天距离2026年元旦还有${Math.floor(distanceNewYear / 1000 / 24 / 60 / 60)}天(2026.01.01)`
   document.getElementById('s01').innerText = `今天距离2026年1月份开资还有${Math.floor(distanceS01 / 1000 / 24 / 60 / 60)}天(2026.01.09)`
