@@ -7,10 +7,8 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="new_year"></div>
-<div id="s01"></div>
 <div id="s02"></div>
-<div id="anniversary" style="text-decoration: line-through;"></div>
+<div id="anniversary"></div>
 <div id="dou_birth"></div>
 <div id="valentine"></div>
 <div id="cele"></div>
@@ -54,8 +52,6 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endNewYearDate = new Date('2026-01-01')
-  const endS01Date = new Date('2026-01-09')
   const endAnniversary = new Date('2026-02-08')
   const endS02Date = new Date('2026-02-10')
   const endDouBirthDate = new Date('2026-02-13')
@@ -65,8 +61,6 @@
   const endS04Date = new Date('2026-04-10')
   const endBirthDate = new Date('2026-04-12')
   const endWeddingDate = new Date('2026-10-03')
-  const distanceNewYear = endNewYearDate.getTime() - currentDate.getTime()
-  const distanceS01 = endS01Date.getTime() - currentDate.getTime()
   const distanceAnniversary = endAnniversary.getTime() - currentDate.getTime()
   const distanceS02 = endS02Date.getTime() - currentDate.getTime()
   const distanceDouBirth = endDouBirthDate.getTime() - currentDate.getTime()
@@ -76,9 +70,7 @@
   const distanceS04 = endS04Date.getTime() - currentDate.getTime()
   const distanceBirth = endBirthDate.getTime() - currentDate.getTime()
   const distanceWedding = endWeddingDate.getTime() - currentDate.getTime()
-  document.getElementById('new_year').innerText = `今天距离2026年元旦还有${Math.floor(distanceNewYear / 1000 / 24 / 60 / 60)}天(2026.01.01)`
-  document.getElementById('s01').innerText = `今天距离2026年1月份开资还有${Math.floor(distanceS01 / 1000 / 24 / 60 / 60)}天(2026.01.09)`
-  document.getElementById('anniversary').innerText = `今天距离2026年领证日、纪念日还有${Math.floor(distanceAnniversary / 1000 / 24 / 60 / 60)}天(2026.02.08)`
+  document.getElementById('anniversary').innerText = `今天距离2026年纪念日还有${Math.floor(distanceAnniversary / 1000 / 24 / 60 / 60)}天(2026.02.08)`
   document.getElementById('s02').innerText = `今天距离2026年2月份开资还有${Math.floor(distanceS02 / 1000 / 24 / 60 / 60)}天(2026.02.10)`
   document.getElementById('dou_birth').innerText = `今天距离2026年豆的生日还有${Math.floor(distanceDouBirth / 1000 / 24 / 60 / 60)}天(2026.02.13)`
   document.getElementById('valentine').innerText = `今天距离2026年情人节还有${Math.floor(distanceValentine / 1000 / 24 / 60 / 60)}天(2026.02.14)`
