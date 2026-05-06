@@ -7,7 +7,6 @@
 <body>
 <div id="toECI"></div>
 <div id="text"></div>
-<div id="wy"></div>
 <div id="s05"></div>
 <div id="s06"></div>
 <div id="dw"></div>
@@ -55,7 +54,6 @@
   const currentMonth = currentTime.getMonth() + 1
   const currentDay = currentTime.getDate()
   const currentDate = new Date(`${currentYear}-${currentMonth}-${currentDay}`)
-  const endWYDate = new Date('2026-05-01')
   const endS05Date = new Date('2026-05-08')
   const endS06Date = new Date('2026-06-10')
   const endDWDate = new Date('2026-06-19')
@@ -67,7 +65,6 @@
   const endS11Date = new Date('2026-11-10')
   const endS12Date = new Date('2026-12-10')
   const endWeddingDate = new Date('2026-10-03')
-  const distanceWY = endWYDate.getTime() - currentDate.getTime()
   const distanceS05 = endS05Date.getTime() - currentDate.getTime()
   const distanceS06 = endS06Date.getTime() - currentDate.getTime()
   const distanceDW = endDWDate.getTime() - currentDate.getTime()
@@ -79,7 +76,6 @@
   const distanceS11 = endS11Date.getTime() - currentDate.getTime()
   const distanceS12 = endS12Date.getTime() - currentDate.getTime()
   const distanceWedding = endWeddingDate.getTime() - currentDate.getTime()
-  document.getElementById('wy').innerText = `今天距离2026年劳动节假期还有${Math.floor(distanceWY / 1000 / 24 / 60 / 60)}天(2026.05.01)`
   document.getElementById('s05').innerText = `今天距离2026年5月份开资还有${Math.floor(distanceS05 / 1000 / 24 / 60 / 60)}天(2026.05.08)`
   document.getElementById('s06').innerText = `今天距离2026年6月份开资还有${Math.floor(distanceS06 / 1000 / 24 / 60 / 60)}天(2026.06.10)`
   document.getElementById('dw').innerText = `今天距离2026年端午节假期还有${Math.floor(distanceDW / 1000 / 24 / 60 / 60)}天(2026.06.19)`
